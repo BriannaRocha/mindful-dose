@@ -31,3 +31,13 @@ class Drug(models.Model):
 
   def get_absolute_url(self):
     return reverse('drug-detail', kwargs={'drug_id': self.id})
+  
+class Dose(models.Model):
+  date = models.DateField('Dosage date')
+  dosage = models.CharField(max_length=150)
+  time = models.TimeField('Dosage time')
+
+  drug = models.ForeignKey(Drug, on_delete=models.CASCADE)
+
+  def __str__(self):
+    return f"{self.get_dose_display()} taken on {self.date} at {self.time}"
