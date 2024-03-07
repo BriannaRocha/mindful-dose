@@ -23,6 +23,10 @@
     <h2>Form: {{ drug.form }}</h2>
     <h2>Duration: {{ drug.duration }}</h2>
     <p>{{ drug.notes }}</p>
+    <div class="drug-actions">
+      <a href="{% url 'drug-update' drug.id %}" class='btn warn'>Edit</a>
+      <a href="{% url 'drug-delete' drug.id %}" class='btn danger'>Delete</a>
+    </div>
   </div>
 </section>
 
