@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Drug
+from .forms import DoseForm
 
 # Create your views here
 def home(request):
@@ -17,7 +18,11 @@ def drug_index(request):
 
 def drug_detail(request, drug_id):
   drug = Drug.objects.get(id=drug_id)
-  return render(request, 'drugs/detail.html', { 'drug': drug })
+  dose_form = DoseForm()
+  return render(request, 'drugs/detail.html', { 
+    'drug': drug,
+    'dose_form': dose_form
+    })
 
 class DrugCreate(CreateView):
   model = Drug

@@ -38,6 +38,17 @@
         alt="An ice cream cone cat"
       /> {% endcomment %}
     </div>
+    <h3>Record a Dose!</h3>
+    <form 
+      action="{% url 'add-dose' drug.id %}"
+      method='post'
+      class='subsection-content'
+      autocomplete='off'
+    >
+    {% csrf_token %}
+    <button type="submit" class='btn submit'>Add Dosage</button>
+    </form>
+    <h3>Dosage Log:</h3>
     <table>
       <thead>
         <tr><th>Date</th><th>Dose</th><th>Time</th></tr>
