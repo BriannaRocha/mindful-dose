@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Drug
 from .forms import DoseForm
@@ -36,3 +36,11 @@ class DrugUpdate(UpdateView):
 class DrugDelete(DeleteView):
   model = Drug
   success_url = '/medications/'
+
+def add_dose(request, drug_id):
+  form = DoseForm(request.POST)
+  if form.is_valid():
+    new_dose = form.save(commit=False)
+    new_dose.drug_id = drug_id
+    new_dose.save()
+  return redirect('drug-detail', drug_id=drug_id)
