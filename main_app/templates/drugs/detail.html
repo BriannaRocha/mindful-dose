@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="{% static 'css/drugs/drug-detail.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+
+<section class="drug-container">
+  {% comment %} <div class="cat-img">
+    <img 
+      src="{% static 'images/sk8r-boi-cat.svg' %}" 
+      alt="A skater boy cat"
+    >
+  </div> {% endcomment %}
+  <div class="drug-details">
+    <h1>{{ drug.name }}</h1>
+    <h2>Form: {{ drug.form }}</h2>
+    <h2>Duration: {{ drug.duration }}</h2>
+    <p>{{ drug.notes }}</p>
+  </div>
+</section>
+
+{% endblock %}
