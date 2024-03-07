@@ -40,4 +40,4 @@ class Dose(models.Model):
   drug = models.ForeignKey(Drug, on_delete=models.CASCADE)
 
   def __str__(self):
-    return f"{self.get_dose_display()} taken on {self.date} at {self.time}"
+    return f"{self.dosage} taken on {self.date} at {self.time}"
