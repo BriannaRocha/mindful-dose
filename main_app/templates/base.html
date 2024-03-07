@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,21 +12,23 @@
     href=""
   >
   <title>Mindful Dose</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
   {% block head %}
   {% endblock %}
 </head>
 <body>
   <header>
-    <div class="header-logo-container">
+    {% comment %} <div class="header-logo-container">
       <a href="/">
         <img 
           src=""
           alt="The Cat Collector Logo"
         >
       </a>
-    </div>
+    </div> {% endcomment %}
     <nav>
       <ul>
+        <li><a href="{% url 'drug-index' %}">Medications</a></li>
         <li><a href="/about">About</a></li>
       </ul>
     </nav>
