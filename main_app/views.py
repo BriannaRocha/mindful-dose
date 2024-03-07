@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Drug
 
 # Create your views here
@@ -22,4 +22,12 @@ def drug_detail(request, drug_id):
 class DrugCreate(CreateView):
   model = Drug
   fields = ['name', 'form', 'duration', 'notes']
+  success_url = '/medications/'
+
+class DrugUpdate(UpdateView):
+  model = Drug
+  fields = ['name', 'form', 'duration', 'notes']
+
+class DrugDelete(DeleteView):
+  model = Drug
   success_url = '/medications/'
