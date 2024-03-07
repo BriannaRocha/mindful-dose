@@ -22,3 +22,4 @@ def drug_detail(request, drug_id):
 class DrugCreate(CreateView):
   model = Drug
   fields = ['name', 'form', 'duration', 'notes']
+  success_url = '/medications/'

@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 FORMS = (
   ('P', 'Pill'),
@@ -27,3 +28,6 @@ class Drug(models.Model):
 
   def __str__(self):
     return self.name
+
+  def get_absolute_url(self):
+    return reverse('drug-detail', kwargs={'drug_id': self.id})
