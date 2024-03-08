@@ -179,3 +179,13 @@ nav li {
 .page-content {
   font-size: var(--font-reg);
 }
+
+footer{
+  margin-top: auto;
+  padding-top: 50px;
+}
+
+footer img {
+  width: 50px;
+  padding: 10px;
+}

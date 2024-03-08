@@ -1,11 +1,13 @@
 main {
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding-top: 200px;
-  padding-left: 75px;
-  padding-right: 75px;
   height: 100%;
+}
+
+body {
+  background-image: url("/static/images/pill-background.png");
+  background-repeat: repeat;
+  background-size: fill;
 }
 
 .login-box {
@@ -19,6 +21,7 @@ main {
   box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 10px 10px;
   text-align: center;
   border-radius: 15px;
+  margin-top: 300px;
 }
 
 section {
@@ -39,6 +42,9 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgba(67, 179, 223, 0.659);
+  backdrop-filter: blur(5px);
+  border-radius: 0px 15px 15px 0px;
 }
 
 .login {

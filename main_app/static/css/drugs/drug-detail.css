@@ -1,35 +1,37 @@
 main {
-  padding: 0px 100px;
+  padding: 0px 70px;
+  margin-top: 180px;
   height: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
+  max-width: 2000px;
 }
 
 .drug-container {
   padding: 35px 30px;
   display: flex;
   flex-direction: row;
-  gap: 15px;
+  gap: 70px;
   align-items: center;
   justify-content: center;
+  max-width: 750px;
+  width: 100%;
 }
 
 .drug-img img {
-  width: 90%;
-  max-width: 350px;
-  border-radius: 50%;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
 }
 
 .usr-img {
   width: 100%;
-  border-radius: var(--card-border-radius);
+  max-width: 400px;
+  border-radius: 8px;
 }
 
-.drug-details {
-  width: 98%;
-}
 
 .drug-actions {
   margin-top: 20px;

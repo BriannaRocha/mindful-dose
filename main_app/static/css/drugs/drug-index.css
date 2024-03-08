@@ -3,8 +3,9 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  gap: 15px;
+  gap: 10px;
   padding: 0px 150px;
+  max-width: 1750px;
 }
 
 .card {
@@ -13,11 +14,17 @@
   display: flex;
   flex-direction: column;
   padding: 25px;
+  width: 300px;
 }
 
 .card-img-container img {
   border-radius: 40px;
-  width: 300px;
+  width: 200px;
+}
+
+.card-img-container {
+  display: flex;
+  justify-content: center;
 }
 
 .card-title {
