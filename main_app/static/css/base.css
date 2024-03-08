@@ -40,7 +40,7 @@ body {
   --secondary: rgb(57, 57, 57);
   --card-box-shadow: 5px 5px 6px -1px #AAA;
   --font-xtreme: 4.2rem;
-  --font-xxl: 3.6rem;
+  --font-xxl: 5rem;
   --font-xl: 2.4rem;
   --font-l: 1.8rem;
   --font-reg: 1.6rem;
@@ -117,7 +117,7 @@ nav li {
 .page-header {
   display: flex;
   align-items: center;
-  margin: 20px;
+  margin: 40px;
 } 
 
 .btn {
@@ -161,15 +161,18 @@ nav li {
 .page-header h1 {
   font-size: var(--font-xxl);
   margin: 0;
+  font-family: "Yeseva One", serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 .page-header img {
-  height: 40px;
+  height: 100px;
   margin-left:15px;
 }
 
 .page-header img:first-of-type {
-  margin-left: 20px;
+  margin-left: 25px;
 }
 
 .page-content {
