@@ -1,0 +1,34 @@
+.card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 15px;
+  padding: 0px 150px;
+}
+
+.card {
+  border: 4px solid rgb(58, 84, 218);
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+
+.card-img-container img {
+  border-radius: 40px;
+  width: 300px;
+}
+
+.card-title {
+  text-align: center;
+}
+
+.card > a {
+  text-decoration: none;
+  color: black;
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
