@@ -181,7 +181,8 @@ main {
   margin-bottom: 10px;
 }
 
-
-.dose {
-  padding: 20px;
+.dose .btn {
+  margin-top: 12px;
+  margin-bottom: 40px;
+  margin-left: 90px;
 }
