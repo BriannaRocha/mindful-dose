@@ -26,10 +26,10 @@ body {
     'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 
     'Helvetica Neue', sans-serif;
   min-height: 100vh;
-  background-color: rgba(242, 238, 238, 0.927);
+  background-color: rgba(246, 242, 242, 0.953);
   --nav-bg: rgb(97, 156, 199);
   --nav-bg-ff: rgba(83, 136, 216, 0.9);
-  --borders: rgb(64, 94, 240) solid 2px;
+  --borders: rgb(64, 94, 240) solid 2.5px;
   --text-color: rgba(255, 255, 255, 0.957);
   --link-hover-color: rgb(58, 84, 218);
   --button-bg: rgb(245, 245, 245);
