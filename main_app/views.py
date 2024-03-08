@@ -5,8 +5,13 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Drug
+from .models import Drug, Photo
 from .forms import DoseForm
+import uuid
+import boto3
+
+S3_BASE_URL = 'https://s3.us-east-2.amazonaws.com/'
+BUCKET = 'brianna-mindful-dose'
 
 # Create your views here
 class Home(LoginView):
@@ -66,3 +71,22 @@ def signup(request):
   form = UserCreationForm()
   context = { 'form': form, 'error_message': error_message}
   return render(request, 'signup.html', context)
+
+def add_photo(request, drug_id):
+  # photo-file will be the "name" attribute on the <input type="file">
+  photo_file = request.FILES.get('photo-file', None)
+  if photo_file:
+    s3 = boto3.client('s3')
+    key = uuid.uuid4().hex + photo_file.name[photo_file.name.rfind('.'):]
+    try:
+      s3.upload_fileobj(photo_file, BUCKET, key)
+      url = f"{S3_BASE_URL}{BUCKET}/{key}"
+      photo = Photo(url=url, drug_id=drug_id)
+      # Remove old photo if it exists
+      drug_photo = Photo.objects.filter(drug_id=drug_id)
+      if drug_photo.first():
+        drug_photo.first().delete()
+      photo.save()
+    except Exception as err:
+      print('An error occurred uploading file to S3: %s' % err)
+  return redirect('drug-detail', drug_id=drug_id)
