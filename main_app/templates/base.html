@@ -11,6 +11,9 @@
     type="image/png"
     href=""
   >
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap')
+  </style>
   <title>Mindful Dose</title>
   <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
   {% block head %}
@@ -18,14 +21,14 @@
 </head>
 <body>
   <header>
-    {% comment %} <div class="header-logo-container">
+    <div class="header-logo-container">
       <a href="/">
         <img 
-          src=""
-          alt="The Cat Collector Logo"
+          src="{% static "images/header-logo.png" %}"
+          alt="The Mindful Dose Header"
         >
       </a>
-    </div> {% endcomment %}
+    </div>
     <nav>
       <ul>
         {% if user.is_authenticated %}

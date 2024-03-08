@@ -1,0 +1,177 @@
+html {
+  box-sizing: border-box
+}
+
+/* The Universal Selector */
+*, /* All elements*/
+*::before, /* All ::before pseudo-elements */
+*::after { /* All ::after pseudo-elements */
+  /* height & width will now include border & padding by default
+     but can be over-ridden as needed */
+  box-sizing: inherit;
+}
+
+/* resets font size to be 62.5% of the user preference - 
+     in most browser configurations this will be 10px */
+:root {
+  font-size: 62.5%
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 
+    'Helvetica Neue', sans-serif;
+  min-height: 100vh;
+  background-color: rgba(242, 238, 238, 0.927);
+  --nav-bg: rgb(97, 156, 199);
+  --nav-bg-ff: rgba(83, 136, 216, 0.9);
+  --borders: rgb(64, 94, 240) solid 2px;
+  --text-color: rgba(255, 255, 255, 0.957);
+  --link-hover-color: rgb(58, 84, 218);
+  --button-bg: rgb(245, 245, 245);
+  --button-bg-hover: rgb(226, 226, 226);
+  --submit: rgb(26, 128, 0);
+  --warn: rgb(255, 102, 0);
+  --danger: rgb(220, 20, 30);
+  --secondary: rgb(57, 57, 57);
+  --card-box-shadow: 5px 5px 6px -1px #AAA;
+  --font-xtreme: 4.2rem;
+  --font-xxl: 3.6rem;
+  --font-xl: 2.4rem;
+  --font-l: 1.8rem;
+  --font-reg: 1.6rem;
+  --card-border-radius: 6px;
+}
+
+header {
+  display: flex;
+  width: 100%;
+  background: var(--nav-bg-ff);
+  border-bottom: var(--borders);
+  padding: 10px;
+}
+
+nav {
+  display: flex;
+  justify-content: right;
+}
+
+ul {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+
+main {
+  width: 100%;
+  padding: 0 10px;
+}
+
+h2 {
+  font-size: var(--font-xl);
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  text-shadow: 0.5px 0.5px 0.5px rgb(56, 83, 218);
+  font-size: 20px;
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+nav a:hover {
+  color: var(--link-hover-color)
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav li {
+  padding: 5px 10px;
+}
+
+.header-logo-container {
+  display: flex;
+  justify-content: left;
+  flex-grow: 1;
+}
+
+.header-logo-container img {
+  display: flex;
+  justify-content: left;
+  width: 250px;
+  margin-left: 7px;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+} 
+
+.btn {
+  font-size: var(--font-l);
+  padding: 8px 16px;
+  border-radius: 6px;
+  border-width: 2px;
+  border-style: solid;
+  text-decoration: none;
+  background-color: var(--button-bg);
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  margin-right: 10px;
+}
+
+.btn:hover {
+  background-color: var(--button-bg-hover);
+}
+
+.submit {
+  color: var(--submit);
+  border-color: var(--submit);
+}
+
+.secondary {
+  color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+.warn {
+  color: var(--warn);
+  border-color: var(--warn);
+}
+
+.danger {
+  color: var(--danger);
+  border-color: var(--danger);
+}
+
+.page-header h1 {
+  font-size: var(--font-xxl);
+  margin: 0;
+}
+
+.page-header img {
+  height: 40px;
+  margin-left:15px;
+}
+
+.page-header img:first-of-type {
+  margin-left: 20px;
+}
+
+.page-content {
+  font-size: var(--font-reg);
+}

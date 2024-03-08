@@ -15,17 +15,9 @@ main > section {
   flex-direction: column;
 }
 
-/* .header-logo-container {
-  display: none;
-}
-
-.logo-container {
-  max-width: 375px;
-}
-
-.cat-container {
+.drug-container {
   width: 80%;
-} */
+}
 
 .login {
   display: flex;
@@ -62,25 +54,3 @@ main > section {
   margin-right: 0;
   margin-top: 16px;
 }
-
-/* @media only screen and (min-width: 768px) {
-  main {
-    justify-content: space-around;
-  }
-
-  main > section {
-    width: 40%;
-  }
-
-  .login {
-    border: var(--borders);
-    padding: 20px;
-    border-radius: var(--card-border-radius);
-    box-shadow: var(--card-box-shadow);
-    width: 100%;
-  }
-
-  .logo-container {
-    max-width: 520px;
-  }
-} */
