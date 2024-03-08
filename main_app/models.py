@@ -45,3 +45,10 @@ class Dose(models.Model):
   
   class Meta:
     ordering = ['-date']
+
+class Photo(models.Model):
+  url = models.CharField(max_length=250)
+  drug = models.ForeignKey(Drug, on_delete=models.CASCADE)
+
+  def __str__(self):
+    return f"Photo for drug_id: {self.drug_id} @{self.url}"
