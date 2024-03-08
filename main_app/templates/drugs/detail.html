@@ -42,13 +42,12 @@
 <div class="dose-container">
   <section class="dose">
     <div class="subsection-title">
-      <h2>Dosage Log:</h2>
+      <h2>Record a Dose!</h2>
       {% comment %} <img 
         src="{% static 'images/cat-cone.svg' %}" 
         alt="An ice cream cone cat"
       /> {% endcomment %}
     </div>
-    <h3>Record a Dose!</h3>
     <form 
       action="{% url 'add-dose' drug.id %}"
       method='post'
@@ -59,20 +58,26 @@
     <button type="submit" class='btn submit'>Add Dosage</button>
     </form>
     <h3>Dosage Log:</h3>
-    <table>
-      <thead>
-        <tr><th>Date</th><th>Dose</th><th>Time</th></tr>
-      </thead>
-      <tbody>
-        {% for dose in drug.dose_set.all %}
-          <tr>
-            <td>{{dose.date}}</td>
-            <td>{{dose.dosage}}</td>
-            <td>{{dose.time}}</td>
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+    {% if drug.dose_set.all.count %}
+      <table>
+        <thead>
+          <tr><th>Date</th><th>Dose</th><th>Time</th></tr>
+        </thead>
+        <tbody>
+          {% for dose in drug.dose_set.all %}
+            <tr>
+              <td>{{dose.date}}</td>
+              <td>{{dose.dosage}}</td>
+              <td>{{dose.time}}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <div class="subsection-content">
+        <p>No doses have been logged for {{drug.name}}</p>
+      </div>
+    {% endif %}
   </section>
 </div>
 
