@@ -45,6 +45,21 @@
       <a href="{% url 'drug-update' drug.id %}" class='btn warn'>Edit</a>
       <a href="{% url 'drug-delete' drug.id %}" class='btn danger'>Delete</a>
     </div>
+    <h3>Change photo</h3>
+    <p id="file-name"></p>
+    <form 
+      action="{% url 'add-photo' drug.id %}"
+      enctype="multipart/form-data"
+      method="POST"
+    >
+      {% csrf_token %}
+      <label class="btn secondary">
+        <input type="file" name="photo-file" id="file-input">
+      </label>
+      <button type="submit" class="btn submit">Upload Photo</button>
+    </form>
+  </div>
+</section>
   </div>
 </section>
 <div class="dose-container">

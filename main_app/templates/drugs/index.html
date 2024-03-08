@@ -18,13 +18,20 @@
   {% for drug in drugs %}
   <div class="card">
     <a href="{% url 'drug-detail' drug.id %}">
-      {% comment %} <div class="card-content">
-        <div class="card-img-container">
+      <div class="card-img-container">
+        {% if drug.photo.url %}
           <img 
-            src="{% static 'images/sk8r-boi-cat.svg' %}" 
-            alt="A skater boy cat"
+            src="{{drug.photo.url}}" 
+            alt="A photo of {{drug.name}}"
+            class="usr-img"
           >
-        </div> {% endcomment %}
+        {% else %}
+          <img 
+            src="{% static 'images/drug-default.png' %}" 
+            alt="Default med background"
+          >
+        {% endif %}
+      </div>
         <h2 class="card-title">{{ drug.name }}</h2>
       </div>
     </a>
