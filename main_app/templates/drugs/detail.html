@@ -22,12 +22,20 @@
 {% block content %}
 
 <section class="drug-container">
-  {% comment %} <div class="cat-img">
-    <img 
-      src="{% static 'images/sk8r-boi-cat.svg' %}" 
-      alt="A skater boy cat"
-    >
-  </div> {% endcomment %}
+  <div class="drug-img">
+    {% if drug.photo.url %}
+      <img 
+        src="{{drug.photo.url}}" 
+        alt="A photo of {{drug.name}}"
+        class="usr-img"
+      >
+    {% else %}
+      <img 
+        src="{% static 'images/drug-default.png' %}" 
+        alt="Default med background"
+      >
+    {% endif %}
+  </div>
   <div class="drug-details">
     <h1>{{ drug.name }}</h1>
     <h3>Form: {{drug.get_form_display}}</h3>
