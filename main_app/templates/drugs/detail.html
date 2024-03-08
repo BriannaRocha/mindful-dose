@@ -55,6 +55,7 @@
       autocomplete='off'
     >
     {% csrf_token %}
+    {{ dose_form.as_p }}
     <button type="submit" class='btn submit'>Add Dosage</button>
     </form>
     <h3>Dosage Log:</h3>

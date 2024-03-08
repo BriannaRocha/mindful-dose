@@ -38,7 +38,6 @@ class Dose(models.Model):
   date = models.DateField('Dosage date')
   dosage = models.CharField(max_length=150)
   time = models.TimeField('Dosage time')
-
   drug = models.ForeignKey(Drug, on_delete=models.CASCADE)
 
   def __str__(self):
