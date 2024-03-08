@@ -31,7 +31,7 @@ body {
   --nav-bg-ff: rgba(83, 136, 216, 0.9);
   --borders: rgb(64, 94, 240) solid 2.5px;
   --text-color: rgba(255, 255, 255, 0.957);
-  --link-hover-color: rgb(58, 84, 218);
+  --link-hover-color: rgb(45, 69, 187);
   --button-bg: rgb(245, 245, 245);
   --button-bg-hover: rgb(226, 226, 226);
   --submit: rgb(26, 128, 0);
