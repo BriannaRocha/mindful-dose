@@ -3,6 +3,8 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Drug
 from .forms import DoseForm
 
@@ -13,12 +15,12 @@ class Home(LoginView):
 def about(request):
   return render(request, 'about.html')
 
-
+@login_required
 def drug_index(request):
-  drugs = Drug.objects.all()
+  drugs = Drug.objects.filter(user=request.user)
   return render(request, 'drugs/index.html', { 'drugs': drugs })
 
-
+@login_required
 def drug_detail(request, drug_id):
   drug = Drug.objects.get(id=drug_id)
   dose_form = DoseForm()
@@ -27,21 +29,22 @@ def drug_detail(request, drug_id):
     'dose_form': dose_form
     })
 
-class DrugCreate(CreateView):
+class DrugCreate(LoginRequiredMixin, CreateView):
   model = Drug
   fields = ['name', 'form', 'duration', 'notes']
   def form_valid(self, form):
     form.instance.user = self.request.user
     return super().form_valid(form)
 
-class DrugUpdate(UpdateView):
+class DrugUpdate(LoginRequiredMixin, UpdateView):
   model = Drug
   fields = ['form', 'duration', 'notes']
 
-class DrugDelete(DeleteView):
+class DrugDelete(LoginRequiredMixin, DeleteView):
   model = Drug
   success_url = '/medications/'
 
+@login_required
 def add_dose(request, drug_id):
   form = DoseForm(request.POST)
   if form.is_valid():
