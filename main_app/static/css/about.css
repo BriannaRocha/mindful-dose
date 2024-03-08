@@ -1,0 +1,41 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: row;
+  padding-top: 200px;
+  padding-left: 50px;
+  padding-right: 50px;
+  max-width: 1250px;
+}
+
+.logo-about img {
+  width: 500px;
+  border-radius: 25% 0;
+}
+
+.about-body {
+  padding-top: 50px;
+  padding-left: 50px;
+}
+
+h1 {
+  font-size: var(--font-xl);
+  font-family: "Yeseva One", serif;
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
+}
+
+.page-content {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
