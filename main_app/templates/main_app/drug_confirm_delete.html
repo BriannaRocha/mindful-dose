@@ -1,23 +1,28 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/main_app/drug_confirm_delete.css' %}"/>
+{% endblock %}
 
 {% block content %}
 
 <div class="page-header">
   <h1>Delete this Medication?</h1>
-  {% comment %} <img src="{% static 'images/nerd-cat.svg' %}" alt="A cat using a computer"/> {% endcomment %}
+  <img src="{% static 'images/bottle.png' %}" alt="Pill Bottle"/>
 </div>
-<h2>Are you sure you want to remove {{drug.name}}?</h2>
-
-<form action="" class='form' method='post'>
-  {% csrf_token %}
-  <a 
-    href="{% url 'drug-detail' drug.id %}"
-    class="btn secondary"
-  >
-    Cancel
-  </a>
-  <button type="submit" class="btn danger">Remove {{drug.name}}</button>
-</form>
+<div class="confirm-delete">
+  <h2>Are you sure you want to remove {{drug.name}}?</h2>
+  <form action="" class='form' method='post'>
+    {% csrf_token %}
+    <a 
+      href="{% url 'drug-detail' drug.id %}"
+      class="btn secondary"
+    >
+      Cancel
+    </a>
+    <button type="submit" class="btn danger">Remove</button>
+  </form>
+</div>
 
 {% endblock %}

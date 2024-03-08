@@ -11,16 +11,16 @@
   {% if drug %}
     <h1>Edit {{ drug.name }}</h1>
   {% else %}
-    <h1>Add Medication</h1>
+    <h1>Add a Medication</h1>
   {% endif %}
-  {% comment %} <img src="{% static 'images/nerd-cat.svg' %}" alt="A cat using a computer"/> {% endcomment %}
+  <img src="{% static 'images/pack.png' %}" alt="Pill Pack"/> 
 </div>
   <form class='form-container' method='post' action="">
     {% csrf_token %}
     <table>
       {{ form.as_table }}
     </table>
-    <button class='btn submit' type="submit">Submit!</button>
+    <button class='btn submit' type="submit">Submit</button>
   </form>
 
 {% endblock %}
