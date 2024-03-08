@@ -30,8 +30,8 @@
   </div> {% endcomment %}
   <div class="drug-details">
     <h1>{{ drug.name }}</h1>
-    <h2>Form: {{ drug.form }}</h2>
-    <h2>Duration: {{ drug.duration }}</h2>
+    <h3>Form: {{drug.get_form_display}}</h3>
+    <h3>Duration: {{ drug.duration }}</h3>
     <p>{{ drug.notes }}</p>
     <div class="drug-actions">
       <a href="{% url 'drug-update' drug.id %}" class='btn warn'>Edit</a>
