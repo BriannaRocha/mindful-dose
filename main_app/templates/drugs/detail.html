@@ -54,6 +54,7 @@
     >
       {% csrf_token %}
       <label class="btn secondary">
+        Add Photo
         <input type="file" name="photo-file" id="file-input">
       </label>
       <button type="submit" class="btn submit">Upload Photo</button>
@@ -66,10 +67,10 @@
   <section class="dose">
     <div class="subsection-title">
       <h2>Record a Dose!</h2>
-      {% comment %} <img 
-        src="{% static 'images/cat-cone.svg' %}" 
-        alt="An ice cream cone cat"
-      /> {% endcomment %}
+      <img 
+        src="{% static 'images/calendar.png' %}" 
+        alt="Calendar Art"
+      />
     </div>
     <form 
       action="{% url 'add-dose' drug.id %}"

@@ -35,9 +35,9 @@ body {
   --button-bg: rgb(245, 245, 245);
   --button-bg-hover: rgb(226, 226, 226);
   --submit: rgb(26, 128, 0);
-  --warn: rgb(246, 161, 43);
+  --warn: rgb(64, 94, 240);
   --danger: rgb(195, 19, 37);
-  --secondary: rgb(58, 84, 218);
+  --secondary: rgb(64, 94, 240);
   --card-box-shadow: 5px 5px 6px -1px #AAA;
   --font-xtreme: 4.2rem;
   --font-xxl: 5rem;
@@ -127,7 +127,6 @@ nav li {
   border-style: solid;
   text-decoration: none;
   background-color: var(--button-bg);
-  font-weight: 600;
   cursor: pointer;
   margin-right: 10px;
   font-family: "DM Sans", sans-serif;
